@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { SpeciesFilter, GenderFilter, StatusFilter } from "../Filters/index";
 import { useFilterStore } from "../../store";
 import LoadMoreArea from "../LoadMoreArea/LoadMoreArea";
 import { useCharacters } from "../../hooks";
 import CharactersList from "../CharacterList/CharacterList";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Characters = () => {
   let location = useLocation();
   let [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery,setSearchQuery] = useState('');
   const species = useFilterStore((state) => state.species);
   const gender = useFilterStore((state) => state.gender);
   const status = useFilterStore((state) => state.status);
@@ -46,6 +48,11 @@ const Characters = () => {
     }
   };
 
+  const resetFilters = () => {
+    setSearchQuery('')
+    setSearchParams(new URLSearchParams())
+  }
+
   useEffect(() => {
     const speciesQuery = searchParams.get("species");
     const genderQuery = searchParams.get("gender");
@@ -73,7 +80,7 @@ const Characters = () => {
     hasNextPage,
     isFetchingNextPage,
     isFetching
-  } = useCharacters({ filter: { species, gender, status } });
+  } = useCharacters({ filter: { species, gender, status, name: searchQuery } });
 
   const loadMoreProps = {
     fetchNextPage,
@@ -87,6 +94,8 @@ const Characters = () => {
       <SpeciesFilter species={species} onChange={onChangeSpecies} />
       <GenderFilter gender={gender} onChange={onChangeGender} />
       <StatusFilter status={status} onChange={onChangeStatus} />
+      <button onClick={resetFilters}>Reset Filters</button>
+      <SearchBar onSearch={setSearchQuery}/>
       {state === "loading" ? (
         <p>Loading...</p>
       ) : (
