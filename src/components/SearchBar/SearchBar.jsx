@@ -1,11 +1,14 @@
 import { useState } from "react";
 import searchLogo from "/search.svg";
+import PropTypes from "prop-types";
 
-const SearchPage = () => {
+const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    const value = e.target.value;
+    setSearchQuery(value);
+    onSearch(value);
   };
 
   const handleSearchSubmit = (e) => {
@@ -30,4 +33,8 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired
+}
+
+export default SearchBar;
