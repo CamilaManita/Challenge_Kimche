@@ -1,31 +1,45 @@
-import Character from "../Character/Character";
+import { Fragment } from "react";
+import CharacterItem from "../CharacterItem/CharacterItem";
 import PropTypes from "prop-types";
 
-const CharacterList = ({ character }) => {
+const CharactersList = ({ characters }) => {
   return (
-    <div className="characterList">
-      {character.characters.results.length === 0 ? (
-        <h1>Error when obtaining characters</h1>
-      ) : (
-        character.characters.results.map((character) => (
-          <Character
-            key={character.id}
-            id={character.id}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-            img={character.image}
-            gender={character.gender}
-            type={character.type}
-          />
-        ))
-      )}
+    <div className="list">
+      {characters?.pages?.map((group, i) => {
+        const { results } = group;
+
+        if (results.length === 0) {
+          return (
+            <div key="no-data" className="no-data">
+              No any Character.
+            </div>
+          );
+        }
+
+        return (
+          <Fragment key={i}>
+            {results?.map((character, i) => (
+              <CharacterItem
+                key={character.id}
+                character={character}
+                custom={i}
+              />
+            ))}
+          </Fragment>
+        );
+      })}
     </div>
   );
 };
 
-CharacterList.propTypes = {
-  character: PropTypes.object.isRequired,
+CharactersList.propTypes = {
+  characters: PropTypes.shape({
+    pages: PropTypes.arrayOf(
+      PropTypes.shape({
+        results: PropTypes.array.isRequired,
+      }).isRequired
+    ).isRequired,
+  })
 };
 
-export default CharacterList;
+export default CharactersList;

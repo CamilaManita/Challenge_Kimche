@@ -1,30 +1,30 @@
-import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CharacterContainer from "./components/CharacterContainer/CharacterContainer";
-import CharacterDetailContainer from "./components/CharacterDetailContainer/CharacterDetailContainer";
-import Error from "./components/Error/Error";
-import SearchPage from "./components/SearchPage/SearchPage";
-import FilterPage from "./components/FilterPage/FilterPage";
-import Footer from "./components/Footer/Footer";
+import Characters from "./components/Characters/Characters";
+import CharacterDetailContainer from './components/CharacterDetailContainer/CharacterDetailContainer'
+import Error from './components/Error/Error'
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 
+const queryClient = new QueryClient();
 
-function App() {
+export default function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Navbar />
-        <SearchPage/>
-        <FilterPage/>
-        <Routes>
-          <Route path="/" element={<CharacterContainer />} />
-          <Route path="/character/:id" element={<CharacterDetailContainer />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <Footer/>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Characters />} />
+            <Route
+              path="/character/:id"
+              element={<CharacterDetailContainer />}
+            />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer/>
+        </div>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   );
 }
-
-export default App;

@@ -1,36 +1,54 @@
 import { useParams } from "react-router-dom";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "react-query";
+import { request, gql } from "graphql-request";
 import DetailCharacter from "../DetailCharacter/DetailCharacter";
 import Loading from "../Loading/Loading";
 
 const CharacterDetailContainer = () => {
   const { id } = useParams();
-  const GET_CHARACTER = gql`
-    query getCharacter($id: ID!) {
-      character(id: $id) {
-        id
-        name
-        status
-        species
-        gender
-        type
-        image
+
+  const getCharacter = async () => {
+    const query = gql`
+      query GetCharacter($id: ID!) {
+        character(id: $id) {
+          id
+          name
+          status
+          species
+          gender
+          type
+          image
+        }
       }
+    `;
+
+    try {
+      const data = await request(
+        "https://rickandmortyapi.com/graphql",
+        query,
+        { id }
+      );
+
+      return data.character;
+    } catch (error) {
+      throw new Error(`Error fetching character: ${error.message}`);
     }
-  `;
-  const { loading, error, data } = useQuery(GET_CHARACTER, {
-    variables: { id: parseInt(id) },
-  });
-  if (loading)
+  };
+
+  const { data, isLoading, isError } = useQuery(["character", id], getCharacter);
+
+  if (isLoading)
     return (
       <div className="loading-container">
         <Loading />
       </div>
     );
-  if (error) return <p>Error: {error.message}</p>;
+
+  if (isError) return <p>Error: {isError.message}</p>;
+
   return (
     <div className="detail-container">
-      <DetailCharacter character={data.character} />
+      {data && <DetailCharacter character={data} />}
     </div>
   );
 };

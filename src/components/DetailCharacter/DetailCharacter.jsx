@@ -2,6 +2,10 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 const DetailCharacter = ({ character }) => {
+  if (!character) {
+    return <p>No se encontró información del personaje.</p>;
+  }
+
   return (
     <>
       <div className="ind">
@@ -19,7 +23,7 @@ const DetailCharacter = ({ character }) => {
 };
 
 DetailCharacter.propTypes = {
-  character: PropTypes.object.isRequired,
+  character: PropTypes.object,
 };
 
 export default DetailCharacter;
