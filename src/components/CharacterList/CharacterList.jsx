@@ -13,8 +13,10 @@ const CharactersList = ({ characters }) => {
         if (results.length === 0) {
           return (
             <div key="no-data" className="no-data">
-              <p>No se encontraron personajes para esta búsqueda.</p>
-              <NavLink to={"/"} style={{fontSize: "1rem"}} className="volver">Volver</NavLink>
+              <p>No characters were found for this search.</p>
+              <NavLink to={"/"} style={{ fontSize: "1rem" }} className="volver">
+                Volver
+              </NavLink>
             </div>
           );
         }

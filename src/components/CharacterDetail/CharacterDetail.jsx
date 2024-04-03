@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import './CharacterDetail.css'
+import "./CharacterDetail.css";
 
 const CharacterDetail = ({ character }) => {
   return (

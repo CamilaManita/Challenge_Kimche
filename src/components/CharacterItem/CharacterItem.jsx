@@ -39,6 +39,7 @@ const CharacterItem = ({ character, ...restProps }) => {
           height={200}
           src={image}
           width={200}
+          border-radius={10}
         />
         <div className="name">
           <h1>{name}</h1>

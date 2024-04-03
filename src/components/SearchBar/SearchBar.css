@@ -1,11 +1,12 @@
 .search {
-    display: flex;
+    display: inline-block;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    width: 82em;
+    position: relative;
+    width: 80em;
     height: 2.5em;
-    margin: 10px;
+    margin: 5px;
 }
 
 .input {
@@ -18,4 +19,28 @@
     background-color: #F3F3F3;
     border-radius: 10px;
     transition: all 0.5s;
+}
+
+@media screen and (max-width: 540px) {
+    .search {
+        display: contents;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 2.5em;
+        margin: 20px;
+    }
+
+    .input {
+        border: 2px solid transparent;
+        width: 20em;
+        height: 2.5em;
+        padding-left: 0.8em;
+        outline: none;
+        overflow: hidden;
+        background-color: #F3F3F3;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
 }

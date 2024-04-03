@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import github from "/github.svg";
 import linkedin from "/linkedin.svg";
-import './Footer.css'
+import "./Footer.css";
 
 const Footer = () => {
   return (

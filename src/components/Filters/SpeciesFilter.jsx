@@ -12,7 +12,9 @@ const SpeciesFilter = ({ species, onChange }) => {
         onChange(value === "all" ? null : value);
       }}
     >
-      <option value="all" disabled>All species</option>
+      <option value="all" disabled>
+        All species
+      </option>
       <option value="human">Human</option>
       <option value="humanoid">Humanoid</option>
       <option value="alien">Alien</option>

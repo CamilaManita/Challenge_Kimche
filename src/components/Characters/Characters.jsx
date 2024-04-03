@@ -6,6 +6,7 @@ import LoadMoreArea from "../LoadMoreArea/LoadMoreArea";
 import { useCharacters } from "../../hooks";
 import CharactersList from "../CharacterList/CharacterList";
 import SearchBar from "../SearchBar/SearchBar";
+import Navbar from "../Navbar/Navbar";
 import "./Character.css";
 
 const Characters = () => {
@@ -99,6 +100,7 @@ const Characters = () => {
 
   return (
     <div className="container">
+      <Navbar />
       <SearchBar onSearch={setSearchQuery} />
       <SpeciesFilter species={species} onChange={onChangeSpecies} />
       <GenderFilter gender={gender} onChange={onChangeGender} />

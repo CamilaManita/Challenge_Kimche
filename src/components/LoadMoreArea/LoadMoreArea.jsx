@@ -1,11 +1,7 @@
 import PropTypes from "prop-types";
-import './LoadMoreArea.css'
+import "./LoadMoreArea.css";
 
-const LoadMoreArea = ({
-  isFetchingNextPage,
-  hasNextPage,
-  fetchNextPage,
-}) => {
+const LoadMoreArea = ({ isFetchingNextPage, hasNextPage, fetchNextPage }) => {
   return (
     <>
       <div className="loadmore-button-wrapper">
@@ -24,9 +20,9 @@ const LoadMoreArea = ({
 };
 
 LoadMoreArea.propTypes = {
-    isFetchingNextPage: PropTypes.bool.isRequired,
-    hasNextPage: PropTypes.bool,
-    fetchNextPage: PropTypes.func.isRequired
-}
+  isFetchingNextPage: PropTypes.bool.isRequired,
+  hasNextPage: PropTypes.bool,
+  fetchNextPage: PropTypes.func.isRequired,
+};
 
 export default LoadMoreArea;

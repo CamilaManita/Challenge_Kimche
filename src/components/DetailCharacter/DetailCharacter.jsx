@@ -4,7 +4,7 @@ import "./DetailCharacter.css";
 
 const DetailCharacter = ({ character }) => {
   if (!character) {
-    return <p>No se encontró información del personaje.</p>;
+    return <p>No information about the character was found.</p>;
   }
 
   const { name, image, status, gender, species, origin, location, type } =
@@ -14,9 +14,11 @@ const DetailCharacter = ({ character }) => {
     <>
       <div className="ind">
         <div className="detailContainer">
-          <img src={image} alt={name} className="indImg" />
-          <div className="detailStringContainer">
-            <h1>{name}</h1>
+          <h2>{name}</h2>
+          <div className="detailImage">
+            <img src={image} alt={name} />
+          </div>
+          <div className="detailData">
             <h3>Status: {status}</h3>
             <h3>Gender: {gender}</h3>
             <h3>Specie: {species}</h3>
@@ -27,7 +29,7 @@ const DetailCharacter = ({ character }) => {
           </div>
         </div>
         <NavLink to={"/"}>
-          <button className="custom-button button">Volver</button>
+          <button className="custom-button button">Back</button>
         </NavLink>
       </div>
     </>

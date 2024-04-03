@@ -6,11 +6,11 @@
 
 .containerNavbar img {
   height: 50px;
-  margin-right: 10px; /* Espacio entre el primer logo y el texto */
+  margin-right: 10px;
 }
 
 .containerNavbar h1 {
-  margin-right: 10px; /* Espacio entre el texto y el segundo logo */
+  margin-right: 10px;
 }
 
 .contenedorTextoLogo {
@@ -24,6 +24,7 @@
 .text {
   text-decoration: none;
   border: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media screen and (max-width: 488px) {

@@ -2,10 +2,11 @@
   background-color: #4c2882;
   margin-top: 3rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .textFooter {
@@ -15,4 +16,6 @@
 .divLink {
   gap: 2rem;
   scale: 1.5;
+  margin-left: 10px;
+  margin-right: 10px;
 }

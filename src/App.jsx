@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Characters from "./components/Characters/Characters";
 import CharacterDetailContainer from "./components/CharacterDetailContainer/CharacterDetailContainer";
 import Error from "./components/Error/Error";
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
@@ -14,7 +13,6 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <div className="App">
-          <Navbar />
           <Routes>
             <Route path="/" element={<Characters />} />
             <Route
