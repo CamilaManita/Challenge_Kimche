@@ -1,0 +1,18 @@
+.footer {
+  background-color: #4c2882;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.textFooter {
+  color: white;
+}
+
+.divLink {
+  gap: 2rem;
+  scale: 1.5;
+}

@@ -1,0 +1,33 @@
+.containerNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerNavbar img {
+  height: 50px;
+  margin-right: 10px; /* Espacio entre el primer logo y el texto */
+}
+
+.containerNavbar h1 {
+  margin-right: 10px; /* Espacio entre el texto y el segundo logo */
+}
+
+.contenedorTextoLogo {
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text {
+  text-decoration: none;
+  border: none;
+}
+
+@media screen and (max-width: 488px) {
+  .text {
+    font-size: 1.5rem;
+  }
+}

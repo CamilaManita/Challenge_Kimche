@@ -15,5 +15,5 @@ export const useFilterStore = create((set) => ({
   changeStatus: (newStatus) =>
     set(() => {
       return { status: newStatus };
-    })
+    }),
 }));

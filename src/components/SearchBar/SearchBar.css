@@ -1,0 +1,21 @@
+.search {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 82em;
+    height: 2.5em;
+    margin: 10px;
+}
+
+.input {
+    border: 2px solid transparent;
+    width: 80em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+}

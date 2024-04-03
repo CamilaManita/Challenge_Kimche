@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import './LoadMoreArea.css'
 
 const LoadMoreArea = ({
   isFetchingNextPage,
@@ -10,7 +11,7 @@ const LoadMoreArea = ({
       <div className="loadmore-button-wrapper">
         {(isFetchingNextPage || hasNextPage) && (
           <button
-            className="loadmore-button"
+            className="custom-button button"
             onClick={() => fetchNextPage()}
             disabled={!hasNextPage || isFetchingNextPage}
           >

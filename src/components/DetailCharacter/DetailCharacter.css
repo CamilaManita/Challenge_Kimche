@@ -1,0 +1,85 @@
+.ind {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: center;
+  color: white;
+}
+
+@media screen and (max-width: 1020px) {
+  .ind {
+    max-width: 100%;
+  }
+}
+
+.indImg {
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  /* border: 2px solid black; */
+}
+
+.custom-button {
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.button {
+  background: rgb(96, 9, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(96, 9, 240, 1) 0%,
+    rgba(129, 5, 240, 1) 100%
+  );
+  border: none;
+}
+
+.button::before {
+  height: 0%;
+  width: 2px;
+}
+
+.button:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.detailContainer {
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  max-width: 100%;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
+}
+
+.detailStringContainer{
+  width: 100%;
+  margin-left: 35px;
+  margin-right: 35px;
+  text-align: center;
+  color: white;
+  /* background-image: url('../../../imgs/RickAndMorty-Portal.png');
+  background-size: 450px; 
+  background-repeat: no-repeat; 
+  background-position: left;  */
+}

@@ -3,7 +3,7 @@ import { useInfiniteQuery } from "react-query";
 import { client } from "./utils";
 
 const charactersQuery = gql`
-  query($page: Int, $filter: FilterCharacter) {
+  query ($page: Int, $filter: FilterCharacter) {
     characters(page: $page, filter: $filter) {
       results {
         id
@@ -12,6 +12,14 @@ const charactersQuery = gql`
         species
         status
         image
+        type
+        origin {
+          name
+        }
+        location {
+          name
+          dimension
+        }
       }
       info {
         count
@@ -32,13 +40,13 @@ export const useCharacters = (variables) => {
     async ({ pageParam = variables?.page }) => {
       const { characters } = await client.request(charactersQuery, {
         page: pageParam,
-        ...variables
+        ...variables,
       });
 
       return characters;
     },
     {
-      getNextPageParam: (lastPage) => lastPage.info.next
+      getNextPageParam: (lastPage) => lastPage.info.next,
     }
   );
 };
