@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import './Filters.css'
 
 const StatusFilter = ({ status, onChange }) => {
   return (
@@ -10,10 +11,10 @@ const StatusFilter = ({ status, onChange }) => {
         onChange(value === "all" ? null : value);
       }}
     >
-      <option value="all">All status</option>
-      <option value="alive">Alive</option>
-      <option value="dead">Dead</option>
-      <option value="unknown">Unknown</option>
+      <option value="all" className="option">Status...</option>
+      <option value="alive" className="option">Alive</option>
+      <option value="dead" className="option">Dead</option>
+      <option value="unknown" className="option">Unknown</option>
     </select>
   );
 };

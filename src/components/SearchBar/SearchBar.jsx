@@ -1,6 +1,6 @@
 import { useState } from "react";
-import searchLogo from "/search.svg";
 import PropTypes from "prop-types";
+import './SearchBar.css'
 
 const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,14 +20,11 @@ const SearchBar = ({ onSearch }) => {
       <form onSubmit={handleSearchSubmit} className="form">
         <input
           type="text"
-          placeholder="Buscar personaje..."
+          placeholder="Search character..."
           value={searchQuery}
           onChange={handleSearchChange} 
-          className="search-input"
+          className="input"
         />
-        <button type="submit" className="searchButtom">
-            <img src={searchLogo} alt="icono buscar"/>
-        </button>
       </form>
     </div>
   );

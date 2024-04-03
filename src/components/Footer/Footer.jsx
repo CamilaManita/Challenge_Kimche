@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import github from "/github.svg";
 import linkedin from "/linkedin.svg";
+import './Footer.css'
 
 const Footer = () => {
   return (
     <div className="footer">
-      <h2 className="textFooter">Camila Manita</h2>
+      <h4 className="textFooter">Camila Manita</h4>
       <div className="divLink">
         <NavLink to={"https://github.com/CamilaManita"} target="_blank">
           <img src={github} alt="github icon" />
@@ -17,7 +18,7 @@ const Footer = () => {
           <img src={linkedin} alt="linkedin icon" />
         </NavLink>
       </div>
-      <h2 className="textFooter">Full Stack Developer</h2>
+      <h4 className="textFooter">Full Stack Developer</h4>
     </div>
   );
 };

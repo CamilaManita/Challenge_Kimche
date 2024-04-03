@@ -13,21 +13,26 @@ const CharacterDetailContainer = () => {
         character(id: $id) {
           id
           name
-          status
-          species
           gender
-          type
+          species
+          status
           image
+          type
+          origin {
+            name
+          }
+          location {
+            name
+            dimension
+          }
         }
       }
     `;
 
     try {
-      const data = await request(
-        "https://rickandmortyapi.com/graphql",
-        query,
-        { id }
-      );
+      const data = await request("https://rickandmortyapi.com/graphql", query, {
+        id,
+      });
 
       return data.character;
     } catch (error) {
@@ -35,7 +40,10 @@ const CharacterDetailContainer = () => {
     }
   };
 
-  const { data, isLoading, isError } = useQuery(["character", id], getCharacter);
+  const { data, isLoading, isError } = useQuery(
+    ["character", id],
+    getCharacter
+  );
 
   if (isLoading)
     return (

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Filters.css";
 
 const SpeciesFilter = ({ species, onChange }) => {
   return (
@@ -11,7 +12,7 @@ const SpeciesFilter = ({ species, onChange }) => {
         onChange(value === "all" ? null : value);
       }}
     >
-      <option value="all">All species</option>
+      <option value="all" disabled>All species</option>
       <option value="human">Human</option>
       <option value="humanoid">Humanoid</option>
       <option value="alien">Alien</option>
@@ -25,8 +26,8 @@ const SpeciesFilter = ({ species, onChange }) => {
 };
 
 SpeciesFilter.propTypes = {
-    species: PropTypes.string,
-    onChange: PropTypes.func.isRequired
+  species: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default SpeciesFilter;

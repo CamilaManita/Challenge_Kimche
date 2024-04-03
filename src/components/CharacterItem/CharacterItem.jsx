@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import "./CharacterItem.css";
 
 const variants = {
   visible: (i) => ({
@@ -16,8 +17,7 @@ const variants = {
 };
 
 const CharacterItem = ({ character, ...restProps }) => {
-  const { id, name, image, species, gender, status } = character;
-  // const id = typeof character.id === 'string' ? parseInt(character.id) : character.id;
+  const { id, name, image } = character;
   return (
     <NavLink to={`/character/${id}`} className="linkin">
       <motion.div
@@ -25,25 +25,24 @@ const CharacterItem = ({ character, ...restProps }) => {
         variants={variants}
         initial="hidden"
         animate="visible"
-        className="character"
+        className="characterInd"
       >
         <LazyLoadImage
           placeholder={
             <img
               src="https://rickandmortyapi.com/api/character/avatar/19.jpeg"
               alt="placeholder"
+              className="imgCharacter"
             />
           }
           alt={name}
-          height={300}
+          height={200}
           src={image}
-          width={300}
+          width={200}
         />
-        <h2>{name}</h2>
-        <p>{status}</p>
-        <p>
-          {species} - {gender}
-        </p>
+        <div className="name">
+          <h1>{name}</h1>
+        </div>
       </motion.div>
     </NavLink>
   );

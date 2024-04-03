@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import CharacterItem from "../CharacterItem/CharacterItem";
 import PropTypes from "prop-types";
+import "./CharacterList.css";
+import { NavLink } from "react-router-dom";
 
 const CharactersList = ({ characters }) => {
   return (
@@ -11,7 +13,8 @@ const CharactersList = ({ characters }) => {
         if (results.length === 0) {
           return (
             <div key="no-data" className="no-data">
-              No any Character.
+              <p>No se encontraron personajes para esta búsqueda.</p>
+              <NavLink to={"/"} style={{fontSize: "1rem"}} className="volver">Volver</NavLink>
             </div>
           );
         }
@@ -39,7 +42,7 @@ CharactersList.propTypes = {
         results: PropTypes.array.isRequired,
       }).isRequired
     ).isRequired,
-  })
+  }),
 };
 
 export default CharactersList;

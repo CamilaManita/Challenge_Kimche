@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  gap: 2rem;
+  max-width: 90%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.no-data{
+  color: white;
+  font-size: 2rem;
+}
