@@ -1,7 +1,15 @@
 # Desafío para Dev
 
-Nombre postulante: Camila Manita.
-Link a la app en producción: [LINK DEL DEPLOY]
+### Nombre postulante: Camila Manita.
+
+#### Link al deploy de la app en producción: [Challenge kimche por Camila Manita](https://challenge-kimche-camilamanita.netlify.app)
+
+Imagenes del proyecto terminado:
+
+![web_home](imgs/Home%20web.jpeg)
+![web_detail](imgs/Detail%20web.jpeg)
+![responsive_home](imgs/Home%20reponsive.jpeg)
+![responsive_detail](imgs/Detail%20responsive.jpeg)
 
 ## Instrucciones
 
